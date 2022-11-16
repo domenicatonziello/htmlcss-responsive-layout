@@ -8,8 +8,106 @@
 body{
     font-family: sans-serif;
 }
+section{
+    /* margin-bottom: 30px; */
+    padding: 30px 0;
+}
 /* UTILITY */
 .container{
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 30px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.bg-white{
+   background-color: white ;
+}
+.bg-purple{
+    background-color: rgb(151,146,228);
+}
+.bg-heavenly{
+    background-color: rgb(181,221,255);
+}
+/*** HEADER ***/
+header{
+    height: 100px;
+    background-color: rgb(0,132,253);
+
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.navbar{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*** MAIN ***/
+main{
+    padding-top: 100px;
+}
+/* informations */
+.card{
+    flex-basis: 100%;
+    min-height: 200px ;
+    
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+/* strategic-planning */
+/* testimonials */
+/* benefits */
+/* about us */
+.col-left, .col-right{
+    flex-basis: 100%;
+
+    min-height: 300px;
+    border: 1px dashed blue;
+}
+/* get started */
+#get-started .container{
+    min-height: 400px;
+    border: 1px dashed black;
+}
+
+/*** FOOTER ***/
+footer{
+    height: 250px ;
+    background-color: rgb(51,51,51);
+}
+
+/*****************--RESPONSIVE-- ******************/
+@media screen and (min-width: 768px ) {
+    #informations .row{
+        justify-content: space-between;
+    }
+    #informations .card.application{
+        flex-basis: 65%;
+     }
+    #informations .card{
+        flex-basis: 30%;
+    }
+    #benefits .row{
+        justify-content: space-between;
+    }
+    #benefits .card{
+        flex-basis: 48%;
+    }
+    .col-left, .col-right{
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (min-width: 920px) {
+    #strategic-planning .card{
+        flex-basis: 48%;
+    }
+
+    #benefits .card{
+        flex-basis: 32%;
+    }
 }
