@@ -12,6 +12,13 @@ section{
     /* margin-bottom: 30px; */
     padding: 30px 0;
 }
+img{
+    width: 100%;
+    display: block;
+}
+a{
+    text-decoration: none;
+}
 /* UTILITY */
 .container{
     max-width: 1200px;
@@ -22,44 +29,131 @@ section{
     display: flex;
     flex-wrap: wrap;
 }
+.mb-30{
+    margin-bottom: 30px;
+}
 .bg-white{
    background-color: white ;
+   color: black;
 }
 .bg-purple{
     background-color: rgb(151,146,228);
+    color: white;
 }
 .bg-heavenly{
     background-color: rgb(181,221,255);
 }
+.bg-lightblue{
+    background-color: rgb(0,132,253);
+}
 /*** HEADER ***/
 header{
-    height: 100px;
+    height: 90px;
     background-color: rgb(0,132,253);
-
+    color: white;
     position: fixed;
     left: 0;
     right: 0;
 }
 .navbar{
-    height: 100px;
+    height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.fa-bars{
+    font-size: 25px ;
+    display: inline-block;
+}
+.nav-right > ul{
+    display: none;
+}
+.nav-right li{
+    padding-left: 20px;
+    text-transform: capitalize;
+}
+.nav-right a{
+    color: black;
+}
+
+/* buttons */
+.btn{
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: white;
+    display: inline-block;
+}
+.btn-large{
+    padding: 10px 40px;
+    letter-spacing: 3px;
+    font-weight: bolder;
+}
+/* CARD */
+.card{
+    flex-basis: 100%;
+    min-height: 200px ;
+    
+    text-align: center;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding: 30px;
+}
+.card > * , .col-information > *{
+    margin-bottom: 30px;
 }
 /*** MAIN ***/
 main{
     padding-top: 100px;
 }
+main p{
+    line-height: 25px;
+}
 /* informations */
-.card{
-    flex-basis: 100%;
-    min-height: 200px ;
-    
-    border-radius: 30px;
-    margin-bottom: 20px;
+#informations .card > i,
+#informations .card > h3 {
+    color: rgb(0,132,253);
+}
+.card.application{
+    padding-bottom: 0;
+    text-align: left;
+}
+#informations p {
+    color: rgb(90,110,127);
+    font-weight: bolder;
+    /* line-height: 25px; */
+}
+.col-img{
+    margin-bottom: 0;
 }
 /* strategic-planning */
+#strategic-planning .card:first-child{
+    text-align: left;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+#strategic-planning .card:first-child > img{
+    margin-bottom: 60px;
+}
+.fa-arrow-down-long{
+    background-color: rgb(151,146,228);
+    border-radius: 50%;
+    padding: 20px;
+}
+
 /* testimonials */
+#testimonials{
+    text-align: center;
+}
+#testimonials h2{
+    color: rgb(151,146,228);
+}
+#testimonials .card{
+    padding-bottom: 0;
+}
+#testimonials .card > img {
+    border-radius: 50%;
+    width: 100%;
+}
 /* benefits */
 /* about us */
 .col-left, .col-right{
@@ -82,6 +176,8 @@ footer{
 
 /*****************--RESPONSIVE-- ******************/
 @media screen and (min-width: 768px ) {
+    /* main */
+    /* information */
     #informations .row{
         justify-content: space-between;
     }
@@ -89,8 +185,16 @@ footer{
         flex-basis: 65%;
      }
     #informations .card{
-        flex-basis: 30%;
+        flex-basis: 32%;
     }
+    #informations img{
+        width: 50%;
+    }
+    /* strategic-planning */
+    #strategic-planning h2{
+        font-size: 50px;
+    }
+    /* benefits */
     #benefits .row{
         justify-content: space-between;
     }
@@ -103,9 +207,46 @@ footer{
 }
 
 @media screen and (min-width: 920px) {
-    #strategic-planning .card{
-        flex-basis: 48%;
+    /* header */
+    .fa-bars{
+        display: none;
     }
+    .nav-right > ul{
+        display: block;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* main */
+    /* information */
+    .application{
+        display: flex;
+        align-items: center;
+    }
+    .col-information, .col-img{
+        flex-basis: 50%;
+    }
+    #informations .col-img > img{
+        width: 80%;
+    }
+    #informations .col-img{
+        align-self: flex-end;
+    }
+    /* strategic-planning */
+    #strategic-planning h2{
+        font-size: 30px;
+    }
+    #strategic-planning .row{
+        justify-content: center;
+        align-items: flex-end;
+    }
+    #strategic-planning .card{
+        flex-basis: 40%;
+    }
+    #strategic-planning .card:last-child > img{
+    }
+    
 
     #benefits .card{
         flex-basis: 32%;
