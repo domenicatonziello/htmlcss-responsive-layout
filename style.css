@@ -9,7 +9,7 @@ body{
     font-family: 'PT Sans', sans-serif;
 }
 section{
-    padding: 30px 0;
+    padding: 50px 0;
 }
 
 img{
@@ -41,11 +41,25 @@ a{
     background-color: rgb(151,146,228);
     color: white;
 }
+.text-secondary{
+    color:rgb(151,146,228) ;
+}
 .bg-heavenly{
     background-color: rgb(181,221,255);
 }
 .bg-lightblue{
     background-color: rgb(0,132,253);
+}
+figure{
+    width: 220px;
+    height: 220px;
+    
+}
+figure > img{
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
 }
 /*** HEADER ***/
 header{
@@ -100,12 +114,12 @@ header{
     margin-bottom: 20px;
     padding: 30px;
 }
-.card > * , .col-information > *{
+.card > * , .col-left > *{
     margin-bottom: 30px;
 }
 /*** MAIN ***/
 main{
-    padding-top: 100px;
+    padding-top: 90px;
 }
 main p{
     line-height: 25px;
@@ -150,36 +164,101 @@ main p{
     color: rgb(151,146,228);
 }
 #testimonials .card{
-    padding-bottom: 0;
+    padding: 0 30px;
 }
-#testimonials .card figure {
-    width: 260px;
-    height: 260px;
+#testimonials figure{
+    margin: 30px auto;
 }
-#testimonials .card img{
-    object-fit: cover;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
+#testimonials p{
+    font-size: 18px;
 }
 /* benefits */
+#benefits{
+    text-align: center;
+}
+#benefits h2{
+    font-size: 60px;
+}
+#benefits h3{
+    margin-bottom: 35px;
+    font-size: 45px;
+}
+#benefits h4{
+    font-size: 30px;
+}
+#benefits .card{
+    text-align: left;
+    color: rgb(151,146,228);
+}
+#benefits p{
+    color: gray;
+}
 /* about us */
+#about-us p{
+    font-size: 20px;
+    line-height: 40px;
+}
+#about-us h3{
+    font-size: 35px;
+    color: rgb(151,146,228);
+}
+#about-us h2{
+    color: rgb(151,146,228);
+    font-size: 60px;
+}
 .col-left, .col-right{
     flex-basis: 100%;
-
     min-height: 300px;
-    border: 1px dashed blue;
 }
-/* get started */
-#get-started .container{
-    min-height: 400px;
-    border: 1px dashed black;
-}
+ #about-us figure{
+    margin: 30px 0;
+    position: relative;
+ }
+ #about-us .fa-quote-left{
+    color: rgb(151,146,228);
+    font-size: 50px;
 
+    position: absolute;
+    top: 10px;
+    right: 0;
+
+ }
+/* get started */
+#get-started{
+    text-align: center;
+}
+#get-started .container >* {
+  margin-bottom: 30px;
+}
+#get-started p:first-child{
+    color: lightgray;
+    letter-spacing: 2px;
+}
+#get-started h2{
+    font-size: 30px;
+}
+#get-started h1{
+    color: rgb(253,193,95);
+    font-size: 65px;
+}
+#get-started .btn {
+    color:rgb(151,146,228) ;
+    padding: 20px 40px;
+    border-radius: 30px;
+}
+.link{
+    text-decoration: underline;
+}
+.fa-circle{
+    font-size: 5px;
+}
 /*** FOOTER ***/
 footer{
+    padding: 50px;
+    text-align: center;
     height: 250px ;
     background-color: rgb(51,51,51);
+    color: white;
 }
 
 /*****************--RESPONSIVE-- ******************/
@@ -188,12 +267,15 @@ footer{
     /* information */
     #informations .row{
         justify-content: space-between;
+        margin: 0 -1rem;
     }
     #informations .card.application{
-        flex-basis: 65%;
+        flex-basis: calc(100% / 3 * 2 - 2rem);
      }
     #informations .card{
-        flex-basis: 32%;
+        flex-basis: calc(100% / 3 - 2rem);
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
     #informations img{
         width: 50%;
@@ -202,6 +284,20 @@ footer{
     h2{
         font-size: 50px;
     }
+    /* testimonials */
+    #testimonials .card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    #testimonials figure{
+        flex-basis: 40%;
+        padding-right: 30px;
+    }
+    #testimonials .card > div{
+        flex-basis: 60%;
+    }
     /* benefits */
     #benefits .row{
         justify-content: space-between;
@@ -209,8 +305,15 @@ footer{
     #benefits .card{
         flex-basis: 48%;
     }
-    .col-left, .col-right{
-        flex-basis: 50%;
+    /* about us */
+    #about-us .row{
+        justify-content: space-between;
+    }
+    #about-us .col-left{
+        flex-basis: 60%;
+    }
+    #about-us .col-right{
+        flex-basis: 30%;
     }
 }
 
@@ -228,11 +331,11 @@ footer{
         display: flex;
         align-items: center;
     }
-    .col-information, .col-img{
+    #informations .col-left, .col-img{
         flex-basis: 50%;
     }
     #informations .col-img > img{
-        width: 80%;
+        width: 70%;
     }
     #informations .col-img{
         align-self: flex-end;
@@ -248,9 +351,13 @@ footer{
     #strategic-planning .card{
         flex-basis: 40%;
     }
-    #strategic-planning .card:last-child > img{
+    /* testimonials */
+    #testimonials figure{
+        flex-basis: 25%;
     }
-    
+    #testimonials .card > div{
+        flex-basis: 80%;
+    }
 
     #benefits .card{
         flex-basis: 32%;
