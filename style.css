@@ -340,6 +340,7 @@ footer{
     #informations .col-img{
         align-self: flex-end;
     }
+
     /* strategic-planning */
     #strategic-planning h2{
         font-size: 30px;
@@ -350,6 +351,10 @@ footer{
     }
     #strategic-planning .card{
         flex-basis: 40%;
+    }
+    #strategic-planning .card:last-child img{
+        width: 50%;
+        margin: 0 auto;
     }
     /* testimonials */
     #testimonials figure{
